@@ -1,7 +1,9 @@
-# 🪴 Planto — Plant Care Tracker
- <img src="https://i.ibb.co/HpqKHdv4/logo.png" width="120" title="Planto">
+# <img src="https://i.ibb.co/HpqKHdv4/logo.png" width="100" title="Planto"> Planto — Plant Care Tracker
+ 
+ <img src="https://i.ibb.co/LdCF4xQY/Screenshot-1.png" width="" title="Planto">
 
-## Live Preview : [https://green-3f4f3.web.app/](https://green-3f4f3.web.app/)
+
+## Live Preview : [Visit Website](https://green-3f4f3.web.app/)
 
 # Planto 
 This is a plant management web application that allows users to log, track, and manage care tasks for their houseplants. Users can add their plants, log watering/fertilizing dates, set reminders, and track plant health. The platform will support user authentication and personal plant data management.
