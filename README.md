@@ -3,7 +3,7 @@
  <img src="https://i.ibb.co/LdCF4xQY/Screenshot-1.png" width="" title="Planto">
 
 
-## <a href="https://your-live-preview-link.com" target="_blank">View Live Preview</a>
+## <a href="https://green-3f4f3.web.app/" target="_blank">View Live Preview</a>
 --- 
 
 # Planto 
