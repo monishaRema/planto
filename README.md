@@ -5,8 +5,6 @@
 
 <h2> <a href="https://green-3f4f3.web.app/" target="_blank">View Live Preview</a></h2>
 
---- 
-
 # Planto 
 This is a plant management web application that allows users to log, track, and manage care tasks for their houseplants. Users can add their plants, log watering/fertilizing dates, set reminders, and track plant health. The platform will support user authentication and personal plant data management.
 
