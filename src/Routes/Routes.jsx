@@ -10,6 +10,7 @@ import Register from "../Pages/Register";
 import UpdatePlant from "../Pages/UpdatePlant";
 import AllPlants from "../Pages/AllPlants";
 import Details from "../Pages/Details";
+import { baseUrl } from "../config";
 
 
 export const routes = createBrowserRouter([
@@ -20,14 +21,14 @@ export const routes = createBrowserRouter([
       {
         index: true,
         path: "/",
-        loader: () => fetch("https://planto-beta.vercel.app/latest-plants"),
+        loader: () => fetch(`${baseUrl}/latest-plants`),
         element: <Home />,
         errorElement: <Error></Error>
       },
       {
         path: "all-plants",
         element: <AllPlants />,
-        loader: () => fetch("https://planto-beta.vercel.app/"),
+        loader: () => fetch(`${baseUrl}/`),
       },
       {
         path: "/add-plant",
@@ -44,7 +45,7 @@ export const routes = createBrowserRouter([
       { 
         path: "/details/:id",
         loader: ({ params }) =>
-          fetch(`https://planto-beta.vercel.app/plant/${params.id}`),
+          fetch(`${baseUrl}/plant/${params.id}`),
         element: <PrivateRoute>
             <Details></Details> 
         </PrivateRoute>
@@ -63,7 +64,7 @@ export const routes = createBrowserRouter([
       {
         path:"/update-plant/:id",
          loader: ({ params }) =>
-          fetch(`https://planto-beta.vercel.app/plant/${params.id}`),
+          fetch(`${baseUrl}/plant/${params.id}`),
         element: <PrivateRoute>
             <UpdatePlant></UpdatePlant>
         </PrivateRoute>

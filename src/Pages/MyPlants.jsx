@@ -3,6 +3,7 @@ import { AuthContext } from "../Contex/AuthContex";
 import HasPlants from "../Components/Plants/HasPlants";
 import NoPlant from "../Components/Plants/NoPlant";
 import { Helmet } from "@dr.pogodin/react-helmet";
+import { baseUrl } from "../config";
 
 const MyPlants = () => {
   const [plants, setPlant] = useState([]);
@@ -10,7 +11,7 @@ const MyPlants = () => {
   const email = user?.email;
 
   useEffect(() => {
-    fetch(`https://planto-beta.vercel.app/my-plants/${email}`)
+    fetch(`${baseUrl}/my-plants/${email}`)
       .then((res) => res.json())
       .then((data) => setPlant(data));
   }, []);

@@ -4,6 +4,8 @@ import { AuthContext } from "../Contex/AuthContex";
 import Swal from 'sweetalert2';
 import { Helmet } from '@dr.pogodin/react-helmet';
 import {useNavigate } from 'react-router';
+import { baseUrl } from '../config';
+import axios from 'axios';
 
 const AddPlant = () => {
 
@@ -20,18 +22,10 @@ const AddPlant = () => {
     plantData.userName = user?.displayName;
     plantData.createdAt = new Date();
 
-
-
-    fetch('https://planto-beta.vercel.app/plant', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(plantData),
-    })
+      axios.post(`${baseUrl}/plant`,plantData)
       .then((res) => {
-        
-        if (res.ok) {
+
+        if (res.data.insertedId) {
           Swal.fire({
             icon: 'success',
             title: 'Plant added successfully!',

@@ -3,6 +3,7 @@ import React, {  useEffect, useState } from "react";
 import { FaEdit } from "react-icons/fa";
 import { Navigate, useLoaderData, useNavigate } from "react-router";
 import Swal from "sweetalert2";
+import { baseUrl } from "../config";
 
 const UpdatePlant = () => {
   const plant = useLoaderData();
@@ -23,7 +24,7 @@ const UpdatePlant = () => {
     const formData = new FormData(form);
     const plantData = Object.fromEntries(formData.entries());
 
-    fetch(`https://planto-beta.vercel.app/plant/${plant._id}`, {
+    fetch(`${baseUrl}/plant/${plant._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

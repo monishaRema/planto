@@ -39,3 +39,58 @@ Planto — a full-stack, mobile-responsive web application designed to help user
 
 ---
 
+## Folder Structure 
+
+<pre>
+PLANTO/
+├── .firebase/
+├── dist/
+├── node_modules/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── Components/
+│   ├── Contex/
+│   ├── Firebase/
+│   ├── Layout/
+│   ├── Pages/
+│   │   ├── AddPlant.jsx
+│   │   ├── AllPlants.jsx
+│   │   ├── Details.jsx
+│   │   ├── Error.jsx
+│   │   ├── Home.jsx
+│   │   ├── Login.jsx
+│   │   ├── MyPlants.jsx
+│   │   ├── Register.jsx
+│   │   ├── UpdatePlant.jsx
+│   ├── Routes/
+│   ├── App.css
+│   ├── App.jsx
+│   ├── config.js
+│   ├── main.jsx
+├── .env.local
+├── .firebaserc
+├── .gitignore
+├── eslint.config.js
+├── firebase.json
+├── index.html
+├── LICENSE
+├── package-lock.json
+├── package.json
+├── README.md
+├── vite.config.js
+</pre>
+
+
+## 🧪 Setup & Installation
+
+``` bash 
+git clone https://github.com/monishaRema/planto.git
+cd planto
+npm install
+
+npm run dev
+```
+
+Then open your browser and go to:
+http://localhost:5173
