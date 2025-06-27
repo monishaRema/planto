@@ -3,6 +3,7 @@ import { FaHandHoldingWater } from "react-icons/fa";
 import { GiWateringCan } from "react-icons/gi";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
+import { baseUrl } from "../../config";
 
 const Plant = ({ plant, setPlant, plants }) => {
 
@@ -18,7 +19,7 @@ const Plant = ({ plant, setPlant, plants }) => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://planto-beta.vercel.app/plant/${id}`, {
+        fetch(`${baseUrl}/plant/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -82,12 +83,12 @@ const Plant = ({ plant, setPlant, plants }) => {
         </div>
         <div className="grid grid-cols-3 gap-5">
         <Link
-        to={`/details/${plant._id}`}
+        to={`/dashboard/details/${plant._id}`}
         className="bg-[#6A8C25] text-white hover:bg-lime-700 dark:bg-white dark:text-black dark:hover:bg-gray-100 text-center font-semibold py-3 px-4 rounded-md transition duration-300 ease-in-out">
         View
         </Link>
         <Link
-        to={`/update-plant/${plant._id}`}
+        to={`/dashboard/update-plant/${plant._id}`}
         className="bg-green-500 text-white hover:bg-green-600 text-center font-semibold py-3 px-4 rounded-md transition duration-300 ease-in-out">
         Update
         </Link>

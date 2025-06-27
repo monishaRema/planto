@@ -15,7 +15,7 @@ const UpdatePlant = () => {
   }, []);
 
   if(plant.length >= 0){
-    return <Navigate to="/my-plants"></Navigate>
+    return <Navigate to="/dashboard/my-plants"></Navigate>
   }
 
   const handleUpdatePlant = (e) => {
@@ -40,7 +40,7 @@ const UpdatePlant = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-          navigate("/my-plants");
+          navigate("/dashboard/my-plants");
         }
       })
       .catch((error) => {

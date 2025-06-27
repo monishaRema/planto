@@ -80,7 +80,7 @@ const Register = () => {
         });
         form.reset();
       
-        navigate("/");
+        navigate("/dashboard");
         location.reload()
      
      
@@ -103,7 +103,7 @@ const Register = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        navigate("/");
+        navigate("/dashboard");
       })
       .catch((err) => setErrorMessage(err.message));
   };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { use } from "react";
 import { Link, Navigate } from "react-router";
 import { useLoaderData } from "react-router";
 import { GiHolyWater, GiPlantWatering, GiWateringCan } from "react-icons/gi";
@@ -7,8 +7,9 @@ import { FaHandHoldingWater, FaRegUser, FaArrowRight } from "react-icons/fa";
 import { format } from "date-fns";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { motion } from "framer-motion";
+import { AuthContext } from "../Contex/AuthContex";
 const Details = () => {
-
+const {user} = use(AuthContext)
 
     const containerVariants = {
     hidden: {},
@@ -40,7 +41,7 @@ const Details = () => {
     <motion.section
     
     initial="hidden"
-    whileInView="show"
+    animate="show"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants} 
     className="bg-gradient-to-b from-green-50 to-yellow-50 dark:to-[#6A8C25] dark:from-[#204e36] py-25  md:py-32 min-h-screen">
@@ -130,7 +131,8 @@ const Details = () => {
 
             <motion.span  variants={cardVariants} className="inline-block">
               <Link
-                to={"/all-plants"}
+                to={user ? "/dashboard/all-plants" : "/all-plants"}
+
                 className="flex items-center gap-2  bg-[#6A8C25] dark:bg-white dark:hover:bg-yellow-500 dark:hover:text-white dark:text-[#6A8C25] text-white px-8 py-3 rounded-md hover:bg-[#204e36] transition duration-300 ease-in-out"
               >
                 <span className="font-semibold"> All Plants</span> <FaArrowRight></FaArrowRight>

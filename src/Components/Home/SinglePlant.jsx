@@ -1,23 +1,29 @@
-import React from "react";
+import React, { use } from "react";
 import { FaHandHoldingWater } from "react-icons/fa";
 import { GiWateringCan } from "react-icons/gi";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
-const SinglePlant = ({ plant }) => {
+import { AuthContext } from "../../Contex/AuthContex";
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: "easeInOut",
+
+const SinglePlant = ({ plant }) => {
+  const { user } = use(AuthContext);
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+        ease: "easeInOut",
+      },
     },
-  },
-};
+  };
   return (
-    <motion.div variants={cardVariants} className="bg-white dark:bg-[#6A8C25] shadow-lg rounded-lg overflow-hidden group text-center md:text-start flex flex-col justify-between">
+    <motion.div
+      variants={cardVariants}
+      className="bg-white dark:bg-[#6A8C25] shadow-lg rounded-lg overflow-hidden group text-center md:text-start flex flex-col justify-between"
+    >
       <div className="img-box w-full h-64 overflow-hidden">
         <img
           src={plant["plant-image"]}
@@ -54,9 +60,12 @@ const cardVariants = {
           </p>
         </div>
         <Link
-        to={`/details/${plant._id}`}
-        className="w-full block bg-[#6A8C25] dark:bg-green-950 dark:text-white text-white  hover:bg-yellow-600 hover:text-white text-center font-semibold py-3 px-4 rounded-md transition duration-300 ease-in-out">
-        View Plant
+          to={
+            user ? `/dashboard/details/${plant._id}` : `/details/${plant._id}`
+          }
+          className="w-full block bg-[#6A8C25] dark:bg-green-950 dark:text-white text-white  hover:bg-yellow-600 hover:text-white text-center font-semibold py-3 px-4 rounded-md transition duration-300 ease-in-out"
+        >
+          View Plant
         </Link>
       </div>
     </motion.div>

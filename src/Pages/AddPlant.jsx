@@ -34,7 +34,8 @@ const AddPlant = () => {
           })
 
           form.reset();
-          navigate('/all-plants')
+          user ? navigate('dashboard/all-plants') :  navigate('/all-plants')
+          
         }
       })
       .catch((error) => {

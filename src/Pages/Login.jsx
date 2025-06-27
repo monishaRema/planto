@@ -65,7 +65,7 @@ const Login = () => {
         if (locationState) {
           navigate(locationState);
         } else {
-          navigate("/");
+          navigate("/dashboard");
         }
       })
       .catch(() => {
@@ -97,7 +97,7 @@ const Login = () => {
         if (locationState) {
           navigate(locationState);
         } else {
-          navigate("/");
+          navigate("/dashboard");
         }
       })
       .catch((err) => setErrorMessage(err.message));

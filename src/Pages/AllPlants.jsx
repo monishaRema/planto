@@ -5,7 +5,7 @@ import { Link, useLoaderData } from "react-router";
 import { delay, motion } from "framer-motion";
 import SinglePlant from "../Components/Home/SinglePlant";
 
-const AllPlants = () => {
+const AllPlants = ({page}) => {
   const initialPlants = useLoaderData();
 
   const [plants, setPlants] = useState(initialPlants);
