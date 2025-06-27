@@ -36,7 +36,7 @@ const cardVariants = {
             <motion.p key={1} variants={cardVariants} className='max-w-[500px] mx-auto text-center text-gray-500 dark:text-gray-200 text-base md:text-lg'>Discover the latest additions to our plant collection, handpicked from different users.</motion.p>
 
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-15">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-15">
                 {
                     latestPlants?.map((plant, index) => <SinglePlant key={index+2} plant={plant}></SinglePlant>)
                 }

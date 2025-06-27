@@ -12,7 +12,7 @@ import AllPlants from "../Pages/AllPlants";
 import Details from "../Pages/Details";
 import { baseUrl } from "../config";
 import About from "../Pages/About";
-
+import Dashboard from "../Layout/Dashboard";
 
 export const routes = createBrowserRouter([
   {
@@ -24,7 +24,63 @@ export const routes = createBrowserRouter([
         path: "/",
         loader: () => fetch(`${baseUrl}/latest-plants`),
         element: <Home />,
-        errorElement: <Error></Error>
+        errorElement: <Error></Error>,
+      },
+      {
+        path: "all-plants",
+        element: <AllPlants />,
+        loader: () => fetch(`${baseUrl}/`),
+      },
+
+      {
+        path: "/details/:id",
+        loader: ({ params }) => fetch(`${baseUrl}/plant/${params.id}`),
+        element: <Details></Details>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/*",
+        element: <Error></Error>,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        index: true,
+        element: <AllPlants />,
+        loader: () => fetch(`${baseUrl}/`),
+      },
+      {
+        path: "my-plants",
+        element: <MyPlants></MyPlants>,
+      },
+      {
+        path: "update-plant/:id",
+        loader: ({ params }) => fetch(`${baseUrl}/plant/${params.id}`),
+        element: <UpdatePlant></UpdatePlant>,
+      },
+      {
+        path: "add-plant",
+        element: <AddPlant></AddPlant>,
       },
       {
         path: "all-plants",
@@ -32,54 +88,14 @@ export const routes = createBrowserRouter([
         loader: () => fetch(`${baseUrl}/`),
       },
       {
-        path: "/add-plant",
-        element: <PrivateRoute>
-            <AddPlant></AddPlant>
-        </PrivateRoute>
+        path: "details/:id",
+        loader: ({ params }) => fetch(`${baseUrl}/plant/${params.id}`),
+        element: <Details></Details>,
       },
       {
-        path: "/my-plants",
-        element: <PrivateRoute>
-            <MyPlants></MyPlants>
-        </PrivateRoute>
+        path: "my-plants",
+        element: <MyPlants></MyPlants>,
       },
-      { 
-        path: "/details/:id",
-        loader: ({ params }) =>
-          fetch(`${baseUrl}/plant/${params.id}`),
-        element: <PrivateRoute>
-            <Details></Details> 
-        </PrivateRoute>
-      },
-      {
-        path: "/about", 
-        element: <About></About>
-      },
-    
-      {
-        path: "/login",
-        element: <Login></Login>
-      },
-      {
-        path: "/register",
-        element: <Register></Register>
-      },
-
-      {
-        path:"/update-plant/:id",
-         loader: ({ params }) =>
-          fetch(`${baseUrl}/plant/${params.id}`),
-        element: <PrivateRoute>
-            <UpdatePlant></UpdatePlant>
-        </PrivateRoute>
-      },
-      {
-        path: "/*",
-        element: <Error></Error>
-      },
-
-
     ],
-
   },
 ]);

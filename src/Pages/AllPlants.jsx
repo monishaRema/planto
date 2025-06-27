@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { IoWater } from "react-icons/io5";
 import { Link, useLoaderData } from "react-router";
 import { delay, motion } from "framer-motion";
+import SinglePlant from "../Components/Home/SinglePlant";
 
 const AllPlants = () => {
   const initialPlants = useLoaderData();
@@ -63,11 +64,8 @@ const AllPlants = () => {
 
   return (
     <section
-      className="py-25 bg-top bg-cover bg-no-repeat"
-      style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1509423350716-97f9360b4e09?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
-      }}
+      className="bg-gradient-to-b from-green-50 via-yellow-50 to-green-50 dark:from-[#204e36] dark:via-[#6A8C25] dark:to-[#204e36] py-25"
+     
     >
       <Helmet>
         <title>Planto | All Plants</title>
@@ -77,11 +75,11 @@ const AllPlants = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-[#6A8C25] text-3xl md:text-5xl font-bold mb-5 md:mb-1 text-center md:text-start"
+          className="text-[#6A8C25] dark:text-white text-3xl md:text-5xl font-bold mb-5 md:mb-0 text-center md:text-start"
         >
           All Plants
         </motion.h1>
-        <div className="w-full flex justify-center md:justify-end mb-5">
+        <div className="w-full flex justify-center md:justify-end mb-2 md:-mt-8">
           <motion.select
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -109,8 +107,8 @@ const AllPlants = () => {
             </option>
           </motion.select>
         </div>
-        <div className="overflow-x-auto rounded-lg shadow bg-[#ffffff50] dark:bg-[#00000050] backdrop-blur-lg">
-          <table className="min-w-full text-sm text-left px-5">
+      
+          {/* <table className="min-w-full text-sm text-left px-5">
             <thead className="bg-[#6a8c2523] dark:bg-[#6A8C25] text-[#6A8C25] dark:text-white uppercase text-xs font-semibold">
               <motion.tr
                 initial="hidden"
@@ -202,9 +200,16 @@ const AllPlants = () => {
                 </motion.tr>
               ))}
             </motion.tbody>
-          </table>
+          </table> */}
+
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-15">
+                {
+                   plants?.map((plant, index) => <SinglePlant key={index+2} plant={plant}></SinglePlant>)
+                }
+            </div>
         </div>
-      </div>
+   
     </section>
   );
 };

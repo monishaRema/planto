@@ -17,7 +17,7 @@ const cardVariants = {
   },
 };
   return (
-    <motion.div variants={cardVariants} className="bg-white dark:bg-[#6A8C25] shadow-lg rounded-lg overflow-hidden group text-center md:text-start">
+    <motion.div variants={cardVariants} className="bg-white dark:bg-[#6A8C25] shadow-lg rounded-lg overflow-hidden group text-center md:text-start flex flex-col justify-between">
       <div className="img-box w-full h-64 overflow-hidden">
         <img
           src={plant["plant-image"]}
@@ -26,7 +26,7 @@ const cardVariants = {
         />
       </div>
       <div className="content-box p-5">
-        <h2 className="text-[#6A8C25] dark:text-white text-2xl lg:text-3xl font-semibold mb-2">
+        <h2 className="text-[#6A8C25] dark:text-white text-xl lg:text-2xl font-semibold mb-2">
           {plant.name}
         </h2>
         <p className="text-gray-500 dark:text-gray-200 text-sm md:text-base mb-2">

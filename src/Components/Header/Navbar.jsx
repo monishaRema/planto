@@ -122,19 +122,12 @@ const Navbar = () => {
                       <li>
                         <NavLink
                           className={"navlink hover:text-yellow-500"}
-                          to="/add-plant"
+                          to="/dashboard"
                         >
-                          Add Plant
+                          Dahboard
                         </NavLink>
                       </li>
-                      <li>
-                        <NavLink
-                          className={"navlink hover:text-yellow-500"}
-                          to="/my-plants"
-                        >
-                          My Plants
-                        </NavLink>
-                      </li>
+                      
                     </>
                   )}
                   <li>
@@ -187,18 +180,10 @@ const Navbar = () => {
                   <>
                     <motion.li variants={navItemVariants}>
                       <NavLink
-                        to="/add-plant"
+                        to="/dashboard"
                         className="navlink text-sm md:text-base font-medium inline-block py-3 px-4 hover:text-yellow-400"
                       >
-                        Add Plant
-                      </NavLink>
-                    </motion.li>
-                    <motion.li variants={navItemVariants}>
-                      <NavLink
-                        to="/my-plants"
-                        className="navlink text-sm md:text-base font-medium inline-block py-3 px-4 hover:text-yellow-400"
-                      >
-                        My Plants
+                      Dashboard
                       </NavLink>
                     </motion.li>
                   </>
