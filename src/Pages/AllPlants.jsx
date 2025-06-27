@@ -114,7 +114,7 @@ const AllPlants = () => {
             <thead className="bg-[#6a8c2523] dark:bg-[#6A8C25] text-[#6A8C25] dark:text-white uppercase text-xs font-semibold">
               <motion.tr
                 initial="hidden"
-                whileInView="show"
+                animate="show"
                 viewport={{ once: true }}
                 variants={theadVariants}
               >
@@ -158,7 +158,7 @@ const AllPlants = () => {
             </thead>
             <motion.tbody
               initial="hidden"
-              whileInView="show"
+              animate="show"
               viewport={{ once: true }}
               variants={tableVariants}
               className="divide-y divide-gray-50"

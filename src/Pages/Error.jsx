@@ -26,7 +26,7 @@ const Error = () => {
         <div className="inline-block">
           <Link
             to={"/"}
-            className="bg-[#204e36] hover:bg-transparent border border-[#204e36] text-white hover:text-[#204e36] px-6 py-3 rounded-md transition text-center flex items-center gap-2"
+            className="bg-[#204e36] hover:bg-transparent border border-[#204e36] text-white hover:text-[#204e36] px-6 py-3  dark:text-[#204e36] dark:hover:bg-transparent  dark:border-[#ffffff] dark:bg-white dark:hover:text-white  rounded-md transition text-center flex items-center gap-2"
           >
             <FaArrowLeft></FaArrowLeft> Back to Home
           </Link>

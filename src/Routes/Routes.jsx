@@ -11,6 +11,7 @@ import UpdatePlant from "../Pages/UpdatePlant";
 import AllPlants from "../Pages/AllPlants";
 import Details from "../Pages/Details";
 import { baseUrl } from "../config";
+import About from "../Pages/About";
 
 
 export const routes = createBrowserRouter([
@@ -49,7 +50,10 @@ export const routes = createBrowserRouter([
         element: <PrivateRoute>
             <Details></Details> 
         </PrivateRoute>
-
+      },
+      {
+        path: "/about", 
+        element: <About></About>
       },
     
       {

@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router';
 import LatestPlats from '../Components/Home/LatestPlats';
 import TrackPlant from '../Components/Home/TrackPlant';
 import WhyTrack from '../Components/Home/WhyTrack';
+import CTA from '../Components/Home/CTA';
 import { Helmet } from '@dr.pogodin/react-helmet';
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
        <TrackPlant></TrackPlant>
        <LatestPlats latestPlants={latestPlants}></LatestPlats>
        <WhyTrack></WhyTrack>
+      <CTA></CTA>
        </>
     );
 };
