@@ -1,6 +1,5 @@
 import React from 'react';
 import Banner from '../Components/Header/Banner';
-import { useLoaderData } from 'react-router';
 import LatestPlats from '../Components/Home/LatestPlats';
 import TrackPlant from '../Components/Home/TrackPlant';
 import WhyTrack from '../Components/Home/WhyTrack';
@@ -8,7 +7,7 @@ import CTA from '../Components/Home/CTA';
 import { Helmet } from '@dr.pogodin/react-helmet';
 
 const Home = () => {
-      const latestPlants = useLoaderData();
+
     return (
        <>   
             <Helmet>
@@ -17,7 +16,8 @@ const Home = () => {
     </Helmet>
        <Banner></Banner>
        <TrackPlant></TrackPlant>
-       <LatestPlats latestPlants={latestPlants}></LatestPlats>
+
+       <LatestPlats ></LatestPlats>
        <WhyTrack></WhyTrack>
       <CTA></CTA>
        </>

@@ -54,8 +54,8 @@ const {user} = use(AuthContext)
           <div className="w-full md:w-1/2">
             <motion.img
             variants={cardVariants}
-              src={plant["plant-image"]}
-              alt={plant.name}
+              src={plant?.["plant-image"]}
+              alt={plant?.name}
               className="w-full h-[300px] md:h-[600px] object-cover "
             />
           </div>
@@ -63,14 +63,14 @@ const {user} = use(AuthContext)
             <motion.p
              variants={cardVariants}
             className="text-sm md:text-base text-[#204e36] dark:text-gray-100 mb-2 font-bold uppercase tracking-[8px] ">
-              {plant.category}
+              {plant?.category}
             </motion.p>
             <motion.h1 
              variants={cardVariants} className="text-2xl md:text-4xl font-bold mb-4 text-[#6A8C25] dark:text-gray-50">
-              {plant.name}
+              {plant?.name}
             </motion.h1>
             <motion.p  variants={cardVariants} className="text-base md:text-lg text-gray-500 dark:text-gray-200 mb-2">
-              Description: {plant.description}
+              Description: {plant?.description}
             </motion.p>
 
             <div className="meta-data flex flex-wrap justify-center md:justify-start gap-4 my-8">
@@ -78,7 +78,7 @@ const {user} = use(AuthContext)
                 <span className="size-8 rounded-full bg-[#6A8C25] flex items-center justify-center text-white">
                   <FaRegUser size={18} />
                 </span>
-                <span className="text-base md:text-lg text-gray-500 dark:text-gray-200">{plant.userName}</span>
+                <span className="text-base md:text-lg text-gray-500 dark:text-gray-200">{plant?.userName}</span>
               </motion.p>
 
               <motion.p  variants={cardVariants} className="flex items-center gap-2">
@@ -86,7 +86,7 @@ const {user} = use(AuthContext)
                   <FaHandHoldingWater size={18} />
                 </span>
                 <span className="text-base md:text-lg text-gray-500 dark:text-gray-200">
-                  {plant["care-level"]}
+                  {plant?.["care-level"]}
                 </span>
               </motion.p>
 
@@ -95,7 +95,7 @@ const {user} = use(AuthContext)
                   <TbRibbonHealth size={18} />
                 </span>
                 <span className="text-base md:text-lg text-gray-500 dark:text-gray-200">
-                  {plant["health-status"]}
+                  {plant?.["health-status"]}
                 </span>
               </motion.p>
             </div>
@@ -105,7 +105,7 @@ const {user} = use(AuthContext)
               </span>
 
               <span className="text-base md:text-lg text-gray-500 dark:text-gray-200">
-                Watering Fequency : {plant["watering-frequency"]} days
+                Watering Fequency : {plant?.["watering-frequency"]} days
               </span>
             </motion.p>
 
@@ -115,7 +115,7 @@ const {user} = use(AuthContext)
               </span>
               <span className="text-base md:text-lg text-gray-500 dark:text-gray-200">
                 Last Watered :{" "}
-                {format(new Date(plant["last-watered"]), "dd, MMM-yy")}
+                {format(new Date(plant?.["last-watered"]), "dd, MMM-yy")}
               </span>
             </motion.p>
 
@@ -125,7 +125,7 @@ const {user} = use(AuthContext)
               </span>
               <span className="text-base md:text-lg text-gray-500 dark:text-gray-200">
                 Next Watering :{" "}
-                {format(new Date(plant["next-watering"]), "dd, MMM-yy")}
+                {format(new Date(plant?.["next-watering"]), "dd, MMM-yy")}
               </span>
             </motion.p>
 

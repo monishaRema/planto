@@ -18,17 +18,16 @@ export const routes = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    hydrateFallbackElement: <Error></Error>,
     children: [
       {
         index: true,
-        path: "/",
-        loader: () => fetch(`${baseUrl}/latest-plants`),
         element: <Home />,
         errorElement: <Error></Error>,
       },
       {
         path: "all-plants",
-        element: <AllPlants />,
+        element: <AllPlants page={"home"} />,
         loader: () => fetch(`${baseUrl}/`),
       },
 
@@ -51,11 +50,12 @@ export const routes = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "/*",
+        path: "*",
         element: <Error></Error>,
       },
     ],
   },
+
   {
     path: "dashboard",
     element: (
@@ -66,7 +66,7 @@ export const routes = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <AllPlants />,
+        element: <AllPlants page={"dashboard"} />,
         loader: () => fetch(`${baseUrl}/`),
       },
       {
@@ -84,7 +84,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: "all-plants",
-        element: <AllPlants />,
+        element: <AllPlants page={"dashboard"} />,
         loader: () => fetch(`${baseUrl}/`),
       },
       {
@@ -96,6 +96,10 @@ export const routes = createBrowserRouter([
         path: "my-plants",
         element: <MyPlants></MyPlants>,
       },
+      {
+        path: "*",
+        element: <Error></Error>,
+      }
     ],
   },
 ]);

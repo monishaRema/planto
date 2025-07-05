@@ -6,6 +6,7 @@ import { delay, motion } from "framer-motion";
 import SinglePlant from "../Components/Home/SinglePlant";
 
 const AllPlants = ({page}) => {
+
   const initialPlants = useLoaderData();
 
   const [plants, setPlants] = useState(initialPlants);
@@ -107,8 +108,9 @@ const AllPlants = ({page}) => {
             </option>
           </motion.select>
         </div>
+         { page == 'dashboard' && ( 
       
-          {/* <table className="min-w-full text-sm text-left px-5">
+         <table className="min-w-full text-sm text-left px-5 rounded-xl overflow-hidden bg-gray-300/10">
             <thead className="bg-[#6a8c2523] dark:bg-[#6A8C25] text-[#6A8C25] dark:text-white uppercase text-xs font-semibold">
               <motion.tr
                 initial="hidden"
@@ -159,13 +161,13 @@ const AllPlants = ({page}) => {
               animate="show"
               viewport={{ once: true }}
               variants={tableVariants}
-              className="divide-y divide-gray-50"
+              className="divide-y divide-gray-900/10"
             >
-              {plants.map((plant, index) => (
+              {plants?.map((plant, index) => (
                 <motion.tr
                   key={index}
                   variants={rowVariants}
-                  className="hover:bg-[#ffffff90] backdrop-blur-xl"
+                  className="hover:bg-green-300/10"
                 >
                   <td>
                     <span className="pl-5 inline-block font-bold">
@@ -200,14 +202,16 @@ const AllPlants = ({page}) => {
                 </motion.tr>
               ))}
             </motion.tbody>
-          </table> */}
+          </table> 
+          )}
 
-            
+             { page == 'home' && ( 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-15">
                 {
                    plants?.map((plant, index) => <SinglePlant key={index+2} plant={plant}></SinglePlant>)
                 }
             </div>
+             )}
         </div>
    
     </section>
