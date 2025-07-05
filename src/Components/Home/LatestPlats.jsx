@@ -3,7 +3,7 @@ import SinglePlant from "./SinglePlant";
 import { motion } from "framer-motion";
 import { baseUrl } from "../../config";
 const LatestPlats = () => {
-  const [latestPlants, setLatestPlants] = useState(null);
+  const [latestPlants, setLatestPlants] = useState([]);
   useEffect(() => {
     fetch(`${baseUrl}/latest-plants`)
       .then((res) => res.json())
@@ -56,7 +56,7 @@ const LatestPlats = () => {
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-15">
-          {latestPlants.length > 0 && latestPlants?.map((plant, index) => (
+          {latestPlants?.length > 0 && latestPlants?.map((plant, index) => (
             <SinglePlant key={index + 2} plant={plant}></SinglePlant>
           ))}
         </div>
