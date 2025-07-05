@@ -163,7 +163,7 @@ const AllPlants = ({page}) => {
               variants={tableVariants}
               className="divide-y divide-gray-900/10"
             >
-              {plants?.map((plant, index) => (
+              {plants?.length > 0 && plants?.map((plant, index) => (
                 <motion.tr
                   key={index}
                   variants={rowVariants}
@@ -208,7 +208,7 @@ const AllPlants = ({page}) => {
              { page == 'home' && ( 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-15">
                 {
-                   plants?.map((plant, index) => <SinglePlant key={index+2} plant={plant}></SinglePlant>)
+                   plants?.length > 0 && plants?.map((plant, index) => <SinglePlant key={index+2} plant={plant}></SinglePlant>)
                 }
             </div>
              )}
